@@ -32,8 +32,21 @@ console.log(myLiberatedInner());
 /* STRETCH PROBLEM, Do not attempt until you have completed all previous tasks for today's project files */
 
 // ==== Challenge 3: Create a counter function with an object that can increment and decrement ====
+
+// I REALLY struggled with closure. I can't get this baby to work. If you've got the time, Orlando, could you walk me through this sometimes?
+
 const counterFactory = () => {
+  let myCounter = 0;
+  return (
+    function add(){
+      return myCounter +=1;
+    }, 
+    function minus(){
+      return myCounter -= 1;
+    });
   // Return an object that has two methods called `increment` and `decrement`.
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
 };
+const aBetterCounter = counterFactory();
+console.log(aBetterCounter());
